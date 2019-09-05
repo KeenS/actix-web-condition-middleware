@@ -3,14 +3,23 @@ name = "actix-web-condition-middleware"
 version = "0.1.0"
 authors = ["κeen <3han5chou7@gmail.com>"]
 edition = "2018"
-license = "APACHE-2.0/MTI"
+license = "Apache-2.0/MTI"
+description = "An actix-web middleware that allows conditionally enable another middleware"
+readme = "README.md"
+keywords = ["actix", "http", "web", "middleware", "async"]
+homepage = "https://github.com/KeenS/actix-web-condition-middleware"
+repository = "https://github.com/KeenS/actix-web-condition-middleware.git"
+documentation = "https://docs.rs/actix-web-condition-middleware/"
+categories = ["network-programming", "asynchronous",
+              "web-programming::http-server"]
+              
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-actix-web = "1.0.7"
-actix-service = "0.4.2"
-futures = "0.1.28"
+actix-web = "1"
+actix-service = "0.4"
+futures = "0.1"
 
 [dev-dependencies]
-env_logger = "0.6.2"
+env_logger = "0.6"

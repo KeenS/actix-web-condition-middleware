@@ -2,10 +2,9 @@ use actix_service::{Service, Transform};
 use futures::future::{ok, Either, FutureResult, Map};
 use futures::{Future, Poll};
 
-// There are two steps in middleware processing.
-// 1. Middleware initialization, middleware factory gets called with
-//    next service in chain as parameter.
-// 2. Middleware's call method gets called with normal request.
+/// use like below:
+/// `App::new().wrap(Condition::new(true, NormalizePath))`
+/// Note that you cannot use with `Logger` because it changes response type
 pub struct Condition<T> {
     trans: T,
     enable: bool,
@@ -17,8 +16,6 @@ impl<T> Condition<T> {
     }
 }
 
-// Middleware factory is `Transform` trait from actix-service crate
-// `S` - type of the next service
 impl<S, T> Transform<S> for Condition<T>
 where
     S: Service,
