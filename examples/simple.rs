@@ -11,7 +11,6 @@ pub fn main() {
     env_logger::init();
 
     HttpServer::new(|| {
-        // App::new().wrap(Logger::default())
         App::new().wrap(Condition::new(true, NormalizePath))
     })
     .bind("127.0.0.1:8888")
